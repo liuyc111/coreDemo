@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Core1._0.CoreAttribute
 {
+    /// <summary>
+    /// 参数过滤
+    /// </summary>
     public class TouristRouteTitleMustBeDifferentFromDescriptionAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)

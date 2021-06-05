@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\demo\\Core\\Core1.0\\LycTestCore\\Core1.0\\Core1.0.csproj": {}
+    "C:\\Users\\Liu\\Desktop\\Repositorys\\coredemo\\Core1.0\\Core1.0.csproj": {}
   },
   "projects": {
-    "E:\\demo\\Core\\Core1.0\\LycTestCore\\Core1.0\\Core1.0.csproj": {
+    "C:\\Users\\Liu\\Desktop\\Repositorys\\coredemo\\Core1.0\\Core1.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\demo\\Core\\Core1.0\\LycTestCore\\Core1.0\\Core1.0.csproj",
+        "projectUniqueName": "C:\\Users\\Liu\\Desktop\\Repositorys\\coredemo\\Core1.0\\Core1.0.csproj",
         "projectName": "Core1.0",
-        "projectPath": "E:\\demo\\Core\\Core1.0\\LycTestCore\\Core1.0\\Core1.0.csproj",
+        "projectPath": "C:\\Users\\Liu\\Desktop\\Repositorys\\coredemo\\Core1.0\\Core1.0.csproj",
         "packagesPath": "C:\\Users\\Liu\\.nuget\\packages\\",
-        "outputPath": "E:\\demo\\Core\\Core1.0\\LycTestCore\\Core1.0\\obj\\",
+        "outputPath": "C:\\Users\\Liu\\Desktop\\Repositorys\\coredemo\\Core1.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -49,6 +49,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.15, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

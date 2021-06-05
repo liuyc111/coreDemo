@@ -8,17 +8,17 @@ namespace Core1._0.IServices
 {
     public interface ITouristRouteRepository
     {
-        IEnumerable<TouristRoute> GetTouristRoutes();
-        TouristRoute GetTouistRoute(Guid touristRouteID);
+        Task<IEnumerable<TouristRoute>> GetTouristRoutesasync();
+        Task<TouristRoute> GetTouistRouteasync(Guid touristRouteID);
 
-        bool TouristRouteExists(Guid touristRouteID);
+        Task<bool> TouristRouteExistsasync(Guid touristRouteID);
 
-        IEnumerable<TouristRoutePicture> GetPicturesByTouristRouteID(Guid touristRouteID);
+        Task<IEnumerable<TouristRoutePicture>> GetPicturesByTouristRouteIDasync(Guid touristRouteID);
 
-        TouristRoutePicture GetPicture(int pictureID);
+        Task<TouristRoutePicture> GetPictureasync(int pictureID);
 
-        void AddTouristRoute(TouristRoute touristRoute);
-        IEnumerable<TouristRoute> GetTouristRoutes(string keywords, string ratingOperator, int? rating);
-        bool Save();
+        Task AddTouristRouteasync(TouristRoute touristRoute);
+        Task<IEnumerable<TouristRoute>> GetTouristRoutesasync(string keywords, string ratingOperator, int? rating);
+        Task<bool> Saveasync();
     }
 }

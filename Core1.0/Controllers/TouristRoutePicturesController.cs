@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core1._0.Dtos;
 using Core1._0.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -24,34 +25,38 @@ namespace Core1._0.Controllers
         }
         #endregion
 
-        #region GetPictureListForTouristRoute 根据旅游路线id获取旅游照片
-
-        [HttpGet]
-        public IActionResult GetPictureListForTouristRoute([FromRoute] Guid touristguid)
-        {
-            if (!touristRouteRepository.TouristRouteExists(touristguid))
-            {
-                return NotFound("旅游路线不存在");
-            }
-            var picturesFromRpo = touristRouteRepository.GetPicturesByTouristRouteID(touristguid);
-            return Ok(mapper.Map<IEnumerable<TouristRoutePictureDto>>(picturesFromRpo));
-        }
-        #endregion
-
         #region GetPictuer 获取某个图片
 
         [HttpGet("{pictureid}")]
-        public IActionResult GetPictuer([FromRoute] Guid touristguid, int pictureid)
+        [Authorize]
+        public async Task<IActionResult> GetPictuer([FromRoute] Guid touristguid, int pictureid)
         {
 
-            if (!touristRouteRepository.TouristRouteExists(touristguid))
+            if (!await touristRouteRepository.TouristRouteExistsasync(touristguid))
             {
                 return NotFound("路线不存在");
             }
-            var picture = touristRouteRepository.GetPicture(pictureid);
+            var picture = await touristRouteRepository.GetPictureasync(pictureid);
             return Ok(mapper.Map<TouristRoutePictureDto>(picture));
 
         }
         #endregion
+
+        #region GetPictureListForTouristRoute 根据旅游路线id获取旅游照片
+
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetPictureListForTouristRoute([FromRoute] Guid touristguid)
+        {
+            if (!await touristRouteRepository.TouristRouteExistsasync(touristguid))
+            {
+                return NotFound("旅游路线不存在");
+            }
+            var picturesFromRpo = await touristRouteRepository.GetPicturesByTouristRouteIDasync(touristguid);
+            return Ok(mapper.Map<IEnumerable<TouristRoutePictureDto>>(picturesFromRpo));
+        }
+        #endregion
+
+
     }
 }

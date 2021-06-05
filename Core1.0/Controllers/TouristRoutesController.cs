@@ -3,6 +3,7 @@ using Core1._0.Dtos;
 using Core1._0.Dtos.Request;
 using Core1._0.IServices;
 using Core1._0.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +25,63 @@ namespace Core1._0.Controllers
         {
             _touristRouteRepository = touristRouteRepository ?? throw new Exception("touristRouteRepository not auto ");
             _mapper = mapper ?? throw new Exception("mapper not auto ");
+        }
+        #endregion
+
+        #region CreateTouist 创建旅游路线
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> CreateTouist([FromBody] TouristRouteForCreateDto touristRouteForCreateDto)
+        {
+            var touristroute = _mapper.Map<TouristRoute>(touristRouteForCreateDto);
+            await _touristRouteRepository.AddTouristRouteasync(touristroute);
+            return CreatedAtRoute("GetTouristRouteByID", new { touristRouteId = touristroute.Id }, _mapper.Map<TouristRouteDto>(touristroute));
+        }
+        #endregion
+
+        #region GetTouristRouteByRating 条件检索旅游路线
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> GetTouristRouteByRating([FromQuery] TouristRouteResourceRatingDto touristRouteResourceRatingDto)
+        {
+            IEnumerable<TouristRoute> list = await _touristRouteRepository.GetTouristRoutesasync(touristRouteResourceRatingDto.KewWord, touristRouteResourceRatingDto.RatingOperator, touristRouteResourceRatingDto.RatingValue);
+
+            if (list == null)
+            {
+                return NotFound("路线不存在");
+            }
+            return Ok(_mapper.Map<IEnumerable<TouristRouteDto>>(list));
+        }
+        #endregion
+
+        #region  GetTouristRouteByID 根据ID获取旅游路线
+        [HttpGet("{touristRouteId}", Name = "GetTouristRouteByID")]
+        [Authorize]
+        public async Task<IActionResult> GetTouristRouteByID(Guid touristRouteId)
+        {
+            if (!await _touristRouteRepository.TouristRouteExistsasync(touristRouteId))
+            {
+                return NotFound("路线不存在");
+            }
+            return Ok(_mapper.Map<TouristRouteDto>(await _touristRouteRepository.GetTouistRouteasync(touristRouteId)));
+        }
+        #endregion
+
+        #region UpdateTouristRoute 更新旅游路线
+
+        [HttpPut("{touristRouteId}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateTouristRoute([FromRoute] Guid touristRouteId, [FromBody] TouristRouteForUpdateDto touristRouteForUpdateDto)
+        {
+            if (!await _touristRouteRepository.TouristRouteExistsasync(touristRouteId))
+            {
+                return NotFound("不存在");
+            }
+            TouristRoute touristRoute = await _touristRouteRepository.GetTouistRouteasync(touristRouteId);
+            touristRoute = _mapper.Map(touristRouteForUpdateDto, touristRoute);
+           await _touristRouteRepository.Saveasync();
+            return NoContent();
         }
         #endregion
 
@@ -66,58 +124,5 @@ namespace Core1._0.Controllers
 
         //} 
         #endregion
-
-        #region  GetTouristRouteByID 根据ID获取旅游路线
-        [HttpGet("{touristRouteId}", Name = "GetTouristRouteByID")]
-        public IActionResult GetTouristRouteByID(Guid touristRouteId)
-        {
-            if (!_touristRouteRepository.TouristRouteExists(touristRouteId))
-            {
-                return NotFound("路线不存在");
-            }
-            return Ok(_mapper.Map<TouristRouteDto>(_touristRouteRepository.GetTouistRoute(touristRouteId)));
-        }
-        #endregion
-
-        #region CreateTouist 创建旅游路线
-
-        [HttpPost]
-        public IActionResult CreateTouist([FromBody] TouristRouteForCreateDto touristRouteForCreateDto)
-        {
-            var touristroute = _mapper.Map<TouristRoute>(touristRouteForCreateDto);
-            _touristRouteRepository.AddTouristRoute(touristroute);
-            return CreatedAtRoute("GetTouristRouteByID", new { touristRouteId = touristroute.Id }, _mapper.Map<TouristRouteDto>(touristroute));
-        }
-        #endregion
-
-        #region GetTouristRouteByRating 条件检索旅游路线
-        [HttpGet]
-        public IActionResult GetTouristRouteByRating([FromQuery] TouristRouteResourceRatingDto touristRouteResourceRatingDto)
-        {
-            IEnumerable<TouristRoute> list = _touristRouteRepository.GetTouristRoutes(touristRouteResourceRatingDto.KewWord, touristRouteResourceRatingDto.RatingOperator, touristRouteResourceRatingDto.RatingValue);
-
-            if (list == null)
-            {
-                return NotFound("路线不存在");
-            }
-            return Ok(_mapper.Map<IEnumerable<TouristRouteDto>>(list));
-        }
-        #endregion
-
-
-
-        [HttpPut("{touristRouteId}")]
-        public IActionResult UpdateTouristRoute([FromRoute] Guid touristRouteId, [FromBody] TouristRouteForUpdateDto touristRouteForUpdateDto)
-        {
-            if (!_touristRouteRepository.TouristRouteExists(touristRouteId))
-            {
-                return NotFound("不存在");
-            }
-            TouristRoute touristRoute = _touristRouteRepository.GetTouistRoute(touristRouteId);
-            touristRoute = _mapper.Map(touristRouteForUpdateDto, touristRoute);
-            _touristRouteRepository.Save();
-            return NoContent();
-        }
-
     }
 }

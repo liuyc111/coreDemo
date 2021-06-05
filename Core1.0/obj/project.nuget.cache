@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "bXZhK8aL4YSb2dk/Agk6L98fdmLXLa+riW7z2bShVJgdk6BmGudAPsbUHoKxZND62H0UondhFfKQ+j4teOGE5w==",
+  "dgSpecHash": "RneZ25QCLoN0JXHz9Bg8h4mbDTnqcB9UOH37hZRpmG40ncXB5d1wV6ht0qiLuTTe8LbblPpL5GpPX4WlOwpxFg==",
   "success": true,
-  "projectFilePath": "E:\\demo\\Core\\Core1.0\\LycTestCore\\Core1.0\\Core1.0.csproj",
+  "projectFilePath": "C:\\Users\\Liu\\Desktop\\Repositorys\\coredemo\\Core1.0\\Core1.0.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Liu\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Liu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\Liu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Liu\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.15\\microsoft.aspnetcore.authentication.jwtbearer.3.1.15.nupkg.sha512",
     "C:\\Users\\Liu\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Liu\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Liu\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

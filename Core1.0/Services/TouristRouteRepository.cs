@@ -19,33 +19,33 @@ namespace Core1._0.Services
             _context = appdbcontext;
         }
 
-        public void AddTouristRoute(TouristRoute touristRoute)
+        public async Task AddTouristRouteasync(TouristRoute touristRoute)
         {
-            _context.Add(touristRoute);
-            Save();
+            await _context.AddAsync(touristRoute);
+            await Saveasync();
         }
 
-        public TouristRoutePicture GetPicture(int pictureID)
+        public async Task<TouristRoutePicture> GetPictureasync(int pictureID)
         {
-            return _context.TouristRoutePictures.Where(o => o.Id.Equals(pictureID)).FirstOrDefault();
+            return await _context.TouristRoutePictures.Where(o => o.Id.Equals(pictureID)).FirstAsync();
         }
 
-        public IEnumerable<TouristRoutePicture> GetPicturesByTouristRouteID(Guid touristRouteID)
+        public async Task<IEnumerable<TouristRoutePicture>> GetPicturesByTouristRouteIDasync(Guid touristRouteID)
         {
-            return _context.TouristRoutePictures.Where(p => p.TouristRouteId.Equals(touristRouteID)).ToList();
+            return await _context.TouristRoutePictures.Where(p => p.TouristRouteId.Equals(touristRouteID)).ToListAsync();
         }
 
-        public TouristRoute GetTouistRoute(Guid touristRouteID)
+        public async Task<TouristRoute> GetTouistRouteasync(Guid touristRouteID)
         {
-            return _context.TouristRoutes.Where(o => o.Id == touristRouteID).FirstOrDefault();
+            return await _context.TouristRoutes.Where(o => o.Id == touristRouteID).FirstAsync();
         }
 
-        public IEnumerable<TouristRoute> GetTouristRoutes()
+        public async Task<IEnumerable<TouristRoute>> GetTouristRoutesasync()
         {
-            return _context.TouristRoutes.ToList();
+            return await _context.TouristRoutes.ToListAsync();
         }
 
-        public IEnumerable<TouristRoute> GetTouristRoutes(string keywords, string ratingOperator, int? rating)
+        public async Task<IEnumerable<TouristRoute>> GetTouristRoutesasync(string keywords, string ratingOperator, int? rating)
         {
             IQueryable<TouristRoute> result = _context.TouristRoutes.Include(testc => testc.Pictures);
             if (!string.IsNullOrEmpty(keywords))
@@ -61,17 +61,17 @@ namespace Core1._0.Services
                     _ => result.Where(t => t.Rating.Equals(rating))
                 };
             }
-            return result.ToList();
+            return await result.ToListAsync();
         }
 
-        public bool Save()
+        public async Task<bool> Saveasync()
         {
-            return _context.SaveChanges() > 0;
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        public bool TouristRouteExists(Guid touristRouteID)
+        public async Task<bool> TouristRouteExistsasync(Guid touristRouteID)
         {
-            return _context.TouristRoutes.Any(o => o.Id.Equals(touristRouteID));
+            return await _context.TouristRoutes.AnyAsync(o => o.Id.Equals(touristRouteID));
         }
 
 
