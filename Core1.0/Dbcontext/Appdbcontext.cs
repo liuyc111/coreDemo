@@ -7,10 +7,11 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace Core1._0.Dbcontext
 {
-    public class Appdbcontext : DbContext
+    public class Appdbcontext:IdentityDbContext<IdentityUser>
     {
         public Appdbcontext(DbContextOptions<Appdbcontext> options) : base(options)
         {

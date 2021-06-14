@@ -65,7 +65,6 @@ C:\Users\lyc\Desktop\Core\Core1.0\LycTestCore\Core1.0\bin\Debug\netcoreapp3.1\Db
 C:\Users\lyc\Desktop\Core\Core1.0\LycTestCore\Core1.0\bin\Debug\netcoreapp3.1\Dbcontext\touristRoutesData.json
 C:\Users\lyc\Desktop\Core\Core1.0\LycTestCore\Core1.0\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\lyc\Desktop\Core\Core1.0\LycTestCore\Core1.0\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.csprojAssemblyReference.cache
 C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.AssemblyInfoInputs.cache
 C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.AssemblyInfo.cs
 C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.csproj.CoreCompileInputs.cache
@@ -133,3 +132,16 @@ C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.
 C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.csproj.CopyComplete
 C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.genruntimeconfig.cache
 C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Core1.0.xml
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Liu\Desktop\Repositorys\coredemo\Core1.0\obj\Debug\netcoreapp3.1\Core1.0.csprojAssemblyReference.cache
