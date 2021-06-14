@@ -25,7 +25,7 @@ namespace Core1._0.Profiles
             CreateMap<TouristRouteForCreateDto, TouristRoute>().ForMember(
                 des => des.Id,
                 opt => opt.MapFrom(src => Guid.NewGuid())
-                );
+                ).ForMember(des => des.TravelDays, opt => opt.MapFrom(src => src.TravelDays)).ForMember(des => des.TripType, opt => opt.MapFrom(src => src.TripType));
 
             CreateMap<TouristRouteForUpdateDto, TouristRoute>();
         }

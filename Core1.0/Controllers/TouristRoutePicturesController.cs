@@ -26,6 +26,12 @@ namespace Core1._0.Controllers
         #endregion
 
         #region GetPictuer 获取某个图片
+        /// <summary>
+        /// 根据旅游路线id获取某一个图片
+        /// </summary>
+        /// <param name="touristguid">路线ID</param>
+        /// <param name="pictureid">照片</param>
+        /// <returns></returns>
 
         [HttpGet("{pictureid}")]
         [Authorize]
@@ -43,7 +49,11 @@ namespace Core1._0.Controllers
         #endregion
 
         #region GetPictureListForTouristRoute 根据旅游路线id获取旅游照片
-
+        /// <summary>
+        /// 获取所有照片
+        /// </summary>
+        /// <param name="touristguid">路线ID</param>
+        /// <returns></returns>
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> GetPictureListForTouristRoute([FromRoute] Guid touristguid)

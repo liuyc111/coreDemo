@@ -29,17 +29,26 @@ namespace Core1._0.Controllers
         #endregion
 
         #region CreateTouist 创建旅游路线
+        /// <summary>
+        /// 创建旅游路线 管理员权限
+        /// </summary>
+        /// <param name="touristRouteForCreateDto"></param>
+        /// <returns></returns>
 
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles ="admin")]
         public async Task<IActionResult> CreateTouist([FromBody] TouristRouteForCreateDto touristRouteForCreateDto)
         {
             var touristroute = _mapper.Map<TouristRoute>(touristRouteForCreateDto);
             await _touristRouteRepository.AddTouristRouteasync(touristroute);
             return CreatedAtRoute("GetTouristRouteByID", new { touristRouteId = touristroute.Id }, _mapper.Map<TouristRouteDto>(touristroute));
-        }
+        } 
         #endregion
-
+        /// <summary>
+        /// 根据条件进行查找
+        /// </summary>
+        /// <param name="touristRouteResourceRatingDto"></param>
+        /// <returns></returns>
         #region GetTouristRouteByRating 条件检索旅游路线
         [HttpGet]
         [Authorize]
@@ -56,6 +65,11 @@ namespace Core1._0.Controllers
         #endregion
 
         #region  GetTouristRouteByID 根据ID获取旅游路线
+        /// <summary>
+        /// 根据旅游路线获取详情
+        /// </summary>
+        /// <param name="touristRouteId"></param>
+        /// <returns></returns>
         [HttpGet("{touristRouteId}", Name = "GetTouristRouteByID")]
         [Authorize]
         public async Task<IActionResult> GetTouristRouteByID(Guid touristRouteId)
@@ -69,9 +83,14 @@ namespace Core1._0.Controllers
         #endregion
 
         #region UpdateTouristRoute 更新旅游路线
-
+        /// <summary>
+        /// 更新旅游路线
+        /// </summary>
+        /// <param name="touristRouteId"></param>
+        /// <param name="touristRouteForUpdateDto"></param>
+        /// <returns></returns>
         [HttpPut("{touristRouteId}")]
-        [Authorize]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> UpdateTouristRoute([FromRoute] Guid touristRouteId, [FromBody] TouristRouteForUpdateDto touristRouteForUpdateDto)
         {
             if (!await _touristRouteRepository.TouristRouteExistsasync(touristRouteId))

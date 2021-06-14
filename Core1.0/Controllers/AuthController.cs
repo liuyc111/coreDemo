@@ -16,6 +16,7 @@ namespace Core1._0.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class AuthController : ControllerBase
     {
         private readonly IConfiguration _configuration;
@@ -25,7 +26,7 @@ namespace Core1._0.Controllers
             _configuration = configuration;
         }
         /// <summary> 
-        /// jwt demo
+        /// jwt 登录授权
         /// </summary>
         /// <returns></returns>
         [AllowAnonymous]
@@ -39,6 +40,7 @@ namespace Core1._0.Controllers
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, "user_id")
+               //, new Claim(ClaimTypes.Role,"admin")
             };
             var secrebyte = Encoding.UTF8.GetBytes(_configuration["Authentication:SecretKey"]);
 

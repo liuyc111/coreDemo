@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Core1.0</name>
+    </assembly>
+    <members>
+        <member name="M:Core1._0.Controllers.AuthController.Login(Core1._0.Dtos.Request.LoginDto)">
+            <summary> 
+            jwt 登录授权
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Core1._0.Controllers.TouristRoutePicturesController.GetPictuer(System.Guid,System.Int32)">
+            <summary>
+            根据旅游路线id获取某一个图片
+            </summary>
+            <param name="touristguid">路线ID</param>
+            <param name="pictureid">照片</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core1._0.Controllers.TouristRoutePicturesController.GetPictureListForTouristRoute(System.Guid)">
+            <summary>
+            获取所有照片
+            </summary>
+            <param name="touristguid">路线ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Core1._0.Controllers.TouristRoutesController.CreateTouist(Core1._0.Dtos.Request.TouristRouteForCreateDto)">
+            <summary>
+            创建旅游路线 管理员权限
+            </summary>
+            <param name="touristRouteForCreateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Core1._0.Controllers.TouristRoutesController.GetTouristRouteByRating(Core1._0.Dtos.Request.TouristRouteResourceRatingDto)">
+            <summary>
+            根据条件进行查找
+            </summary>
+            <param name="touristRouteResourceRatingDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Core1._0.Controllers.TouristRoutesController.GetTouristRouteByID(System.Guid)">
+            <summary>
+            根据旅游路线获取详情
+            </summary>
+            <param name="touristRouteId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Core1._0.Controllers.TouristRoutesController.UpdateTouristRoute(System.Guid,Core1._0.Dtos.Request.TouristRouteForUpdateDto)">
+            <summary>
+            更新旅游路线
+            </summary>
+            <param name="touristRouteId"></param>
+            <param name="touristRouteForUpdateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Core1._0.CoreAttribute.TouristRouteTitleMustBeDifferentFromDescriptionAttribute">
+            <summary>
+            参数过滤
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.Request.TouristRouteForCreateDto.Fees">
+            <summary>
+            服务费
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.Request.TouristRouteForCreateDto.Notes">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.Request.TouristRouteForCreateDto.TravelDays">
+            <summary>
+            几日游
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.TouristRouteDto.Features">
+            <summary>
+            特色
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.TouristRouteDto.Fees">
+            <summary>
+            服务费
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.TouristRouteDto.Notes">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Core1._0.Models.TouristRoute.OriginalPrice">
+            <summary>
+            原价
+            </summary>
+        </member>
+        <member name="P:Core1._0.Models.TouristRoute.DiscountPresent">
+            折扣价格
+        </member>
+        <member name="P:Core1._0.Models.TouristRoute.Features">
+            <summary>
+            特色
+            </summary>
+        </member>
+        <member name="P:Core1._0.Models.TouristRoute.Fees">
+            <summary>
+            服务费
+            </summary>
+        </member>
+        <member name="P:Core1._0.Models.TouristRoute.Notes">
+            <summary>
+            备注
+            </summary>
+        </member>
+    </members>
+</doc>
