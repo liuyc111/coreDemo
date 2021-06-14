@@ -59,6 +59,21 @@
             参数过滤
             </summary>
         </member>
+        <member name="P:Core1._0.Dtos.Request.RegisterDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.Request.RegisterDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Core1._0.Dtos.Request.RegisterDto.ConfrimPassword">
+            <summary>
+            验证密码
+            </summary>
+        </member>
         <member name="P:Core1._0.Dtos.Request.TouristRouteForCreateDto.Fees">
             <summary>
             服务费

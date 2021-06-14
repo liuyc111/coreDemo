@@ -40,8 +40,6 @@ namespace Core1._0
             //services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppContext>();
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Appdbcontext>();
 
-
-
             var secrebyte = Encoding.UTF8.GetBytes(_configuration["Authentication:SecretKey"]);
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
                 options =>

@@ -36,13 +36,14 @@ namespace Core1._0.Controllers
         /// <returns></returns>
 
         [HttpPost]
-        [Authorize(Roles ="admin")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> CreateTouist([FromBody] TouristRouteForCreateDto touristRouteForCreateDto)
         {
             var touristroute = _mapper.Map<TouristRoute>(touristRouteForCreateDto);
             await _touristRouteRepository.AddTouristRouteasync(touristroute);
             return CreatedAtRoute("GetTouristRouteByID", new { touristRouteId = touristroute.Id }, _mapper.Map<TouristRouteDto>(touristroute));
-        } 
+        }
         #endregion
         /// <summary>
         /// 根据条件进行查找
@@ -99,7 +100,7 @@ namespace Core1._0.Controllers
             }
             TouristRoute touristRoute = await _touristRouteRepository.GetTouistRouteasync(touristRouteId);
             touristRoute = _mapper.Map(touristRouteForUpdateDto, touristRoute);
-           await _touristRouteRepository.Saveasync();
+            await _touristRouteRepository.Saveasync();
             return NoContent();
         }
         #endregion
