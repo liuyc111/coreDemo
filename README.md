@@ -15,3 +15,6 @@ http://lyc.eastus2.cloudapp.azure.com:8080/swagger/index.html
 一小时六毛 有空在开地址- -
 
 ![image](https://user-images.githubusercontent.com/22926607/122672946-c6148a80-d200-11eb-8b70-aabe4be9d260.png)
+
+
+代码docker地址 docker push lyctestcore/coretest1:tagname
