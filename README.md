@@ -18,3 +18,7 @@ http://lyc.eastus2.cloudapp.azure.com:8080/swagger/index.html
 
 
 代码docker地址 docker push lyctestcore/coretest1:tagname
+
+微服务可以参考这个
+https://www.cnblogs.com/edisonchou/p/9124985.html
+需要太多的机器了 不是穷人能搞的玩应- -
