@@ -1,7 +1,7 @@
 # coreDemo
 core demo
 主要的技术
-.netcore 3.1 API/jwt/swagger/atuomapper/依赖注入/DDD/docker/azuer
+.netcore 3.1 API/jwt/swagger/atuomapper/依赖注入/DDD/docker/azuer/(微服务/gateway 太烧机器想想算了)
 
 
 ![image](https://user-images.githubusercontent.com/22926607/122672999-0ffd7080-d201-11eb-86d3-f8f4be38b0c0.png)
